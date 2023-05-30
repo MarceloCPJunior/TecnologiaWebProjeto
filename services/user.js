@@ -10,18 +10,13 @@ function createToken(user) {
 
 function readToken(token) {
     try {
-        console.log("verificou o token")
-        console.log(SECRET)
         return jwt.verify(token, SECRET)
     } catch (err) {
-        console.log("deu erro")
         throw new Error('Token inválido')
     }
 }
 
 export function verifyToken(token) {
-    console.log("verificando token")
-    console.log(token)
     return readToken(token)
 }
 
